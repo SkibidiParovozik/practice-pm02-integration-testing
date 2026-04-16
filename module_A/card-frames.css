@@ -1,0 +1,294 @@
+/* ========================================
+   СТИЛИ ДЛЯ АНИМИРОВАННЫХ РАМОК КАРТОЧЕК
+   ======================================== */
+
+/* Базовая анимированная рамка (светящаяся) */
+.glowing-frame,
+.frame-glowing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(72deg, #01f2ff, #000000, #0720f7);
+  background-size: 200% 200%;
+  animation: glowing-border 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes glowing-border {
+  0% { 
+    box-shadow: 0 0 10px #00f2ff;
+    background-position: 0% 0%;
+  }
+  50% { 
+    box-shadow: 0 0 15px #ff00ff;
+    background-position: 100% 100%;
+  }
+  100% { 
+    box-shadow: 0 0 10px #00f2ff;
+    background-position: 0% 0%;
+  }
+}
+
+/* Радужная рамка */
+.frame-rainbow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    #ff0000, #ff8000, #ffff00, #00ff00,
+    #00ffff, #0000ff, #8000ff, #ff0080, #ff0000
+  );
+  background-size: 400% 100%;
+  animation: rainbow-flow 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rainbow-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+/* Плавная радуга */
+.frame-rainbow-smooth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    #ff0000, #ff8000, #ffff00, #00ff00,
+    #00ffff, #0000ff, #8000ff, #ff0080, #ff0000
+  );
+  background-size: 300% 300%;
+  animation: rainbow-smooth 8s ease infinite;
+  z-index: 0;
+}
+
+@keyframes rainbow-smooth {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Рамка с пунктирами */
+.frame-dotted {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px dotted rgba(0, 242, 255, 0.7);
+  animation: 
+    dotted-rotate 10s linear infinite,
+    dotted-blink 1.5s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes dotted-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dotted-blink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Рамка с радужными пунктирами */
+.frame-rainbow-dashed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px dashed;
+  border-image: linear-gradient(45deg, #00f2ff, #ff00ff, #0920f7) 1;
+  animation: rainbow-dash-rotate 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rainbow-dash-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Золотые ворота (золотистая рамка) */
+.frame-golden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700, #ffb347);
+  background-size: 200% 200%;
+  animation: golden-glow 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes golden-glow {
+  0%, 100% { 
+    box-shadow: 0 0 10px #ffd700;
+    background-position: 0% 50%;
+  }
+  50% { 
+    box-shadow: 0 0 25px #ffd700, 0 0 40px #ffed4e;
+    background-position: 100% 50%;
+  }
+}
+
+/* Неоновая синяя рамка */
+.frame-neon-blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #00f2ff, #0099ff);
+  animation: neon-blue-pulse 2s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes neon-blue-pulse {
+  0%, 100% { 
+    opacity: 1;
+    box-shadow: 0 0 20px #00f2ff, 0 0 40px #00f2ff;
+  }
+  50% { 
+    opacity: 0.8;
+    box-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+  }
+}
+
+/* Неоновая розовая рамка */
+.frame-neon-pink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ff00ff, #ff00aa);
+  animation: neon-pink-pulse 2s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes neon-pink-pulse {
+  0%, 100% { 
+    opacity: 1;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  }
+  50% { 
+    opacity: 0.8;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  }
+}
+
+/* Огненная рамка */
+.frame-fire {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ff4500, #ff6347, #ff4500, #ff8c00);
+  background-size: 200% 200%;
+  animation: fire-flicker 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes fire-flicker {
+  0%, 100% { 
+    box-shadow: 0 0 15px #ff4500, 0 0 30px #ff6347;
+    background-position: 0% 50%;
+  }
+  50% { 
+    box-shadow: 0 0 25px #ff6347, 0 0 50px #ff4500;
+    background-position: 100% 50%;
+  }
+}
+
+/* Ледяная рамка */
+.frame-ice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #00ffff, #00ccff, #0099ff);
+  animation: ice-shine 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes ice-shine {
+  0%, 100% { 
+    opacity: 0.9;
+    box-shadow: 0 0 15px #00ffff, inset 0 0 15px #00ffff;
+  }
+  50% { 
+    opacity: 1;
+    box-shadow: 0 0 25px #00ffff, inset 0 0 25px #00ffff;
+  }
+}
+
+/* Пульсирующая рамка */
+.frame-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #3498db;
+  animation: pulse-border 2s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulse-border {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 10px #3498db;
+  }
+  50% { 
+    transform: scale(1.02);
+    opacity: 0.8;
+    box-shadow: 0 0 25px #3498db, 0 0 50px #3498db;
+  }
+}
+
+/* Обертка для рамки */
+.frame-wrapper {
+  position: relative;
+  padding: 4px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Контейнер с рамкой */
+.framed-container {
+  position: relative;
+  display: inline-block;
+  padding: 4px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.framed-container .frame-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.framed-container .content {
+  position: relative;
+  z-index: 1;
+}
